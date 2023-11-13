@@ -1,0 +1,266 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="cardBudget">
+                <div id="tableIncomeSources"></div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="cardBudget">
+                        <h6><i class="iconTitle fa-solid fa-piggy-bank"></i>Ahorros</h6>
+                        <div id="graphSaving"></div>
+                        <hr>
+                        <div id="savings"></div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="cardBudget">
+                        <h6><i class="iconTitle fa-solid fa-money-bill-trend-up"></i>Inversiones</h6>
+                        <div id="graphInvestments"></div>
+                        <hr>
+                        <div id="investments"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="cardBudget">
+                        <h6><i class="iconTitle fa-solid fa-box-dollar"></i>Fondo de emergencia</h6>
+                        <div id="graphEmergencyFund"></div>
+                        <hr>
+                        <div id="emergencyFund"></div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="cardBudget">
+                        <h6><i class="iconTitle fa-solid fa-sack-dollar"></i>Resumen patrimonio neto</h6>
+                        <div id="graphPatrimony"></div>
+                        <hr>
+                        <div id="patrimony"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="cardBudget">
+                <div id="tableOfExpenses"></div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="cardBudget">
+                <h6><i class="iconTitle fa-solid fa-money-bill-transfer"></i>Flujo de caja</h6>
+                <div id="graphCashFLow"></div>
+                <hr>
+                <div id="cashFlow"></div>
+                <hr>
+                <div class="row">
+                    <h6><i class="iconTitle fa-solid fa-money-check-dollar-pen"></i>Transacciones</h6>	
+                    <div class="col-sm-6">
+                        <div class="cardBudgetList card-body expenseCard">
+                            <h6 class="text-center"><i class="fa-solid fa-arrow-up-to-dotted-line"></i>Ingresos</h6><hr>
+                            <div id="tableIncomeCash"></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="cardBudgetList card-body expenseCard">
+                            <h6 class="text-center"><i class="fa-solid fa-arrow-down-to-dotted-line"></i>Gastos</h6><hr>
+                            <div id="tableExpenseCash"></div>
+                        </div>
+                    </div>
+                    <div class="col-12 text-end" style="margin-top: 5px; width: 100%;">
+                      <button type="button" class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#transactionLog">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Income Sources-->
+<div class="modal fade" id="addIncome" tabindex="-1" aria-labelledby="incomeSourceModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content modalBubget">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><i class="fa-solid fa-grid-2-plus fa-beat"></i>Agregar nuevo ingreso</h5>
+            </div>
+            <div class="modal-body">
+                <form action="" id="formAddSourceIncome">
+                    <div class="row g-2">
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control form-control-sm" name="nameIncome" id="nameIncome" placeholder="Nombre">
+                            <div class="invalid-feedback">
+                                El nombre no puede estar vacío
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control form-control-sm" name="valueIncome" id="valueIncome" placeholder="Valor">
+                            <div class="invalid-feedback">
+                                El valor debe ser mayor a 0
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-2">
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control form-control-sm" name="deductionPercentage" id="deductionPercentage" placeholder="% deducción" maxlength="3">
+                            <div class="invalid-feedback">
+                                El porcentaje no puede estar vacío y ser mayor a 100
+                            </div>
+                        </div>
+                        <div class="col-sm-8">
+                            <select class="form-control-sm form-control" name="periodicityIncome" id="periodicityIncome">
+                                <option value="1">Diario</option>
+                                <option value="7">Semanal</option>
+                                <option selected value="15">Quincenal</option>
+                                <option value="30">Mensual</option>
+                                <option value="60">Bimensual</option>
+                                <option value="180">Semestral</option>
+                                <option value="365">Anual</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal" id="closeModalIncome">Cerrar</button>
+                <button type="button" class="btn btn-warning btn-sm" id="saveIncome">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal transactionLog -->
+<div class="modal fade" id="transactionLog" tabindex="-1" aria-labelledby="transactionLogLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modalBubget">
+        <div class="modal-header">
+          <h5 class="modal-title" id="transactionLogLabel"><i class="fa-solid fa-plus-minus fa-beat"></i>Registrar movimiento</h5>
+        </div>
+        <div class="modal-body">
+            <form action="" id="registerTransaction">
+            <div class="container-fluid">
+                <div class="row mb-4">
+                    <div class="col-12 text-center">
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <button type="button" class="btn btn-success btn-sm" id="typeIncome">Ingreso</button>
+                            <button type="button" class="btn btn-danger btn-sm" id="typeEgress">Gasto</button>
+                            <button type="button" class="btn btn-primary btn-sm" id="typePayment">Pago</button>
+                            <button type="button" class="btn btn-warning btn-sm" id="typeWithdrawal">Retiro</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <input class="form-control-sm" type="hidden" id="typeTransaction" name="typeTransaction">
+                    <div class="col-12" id="movimient">
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <input class="form-control form-control-sm" type="text" id="detail" name="detail" placeholder="Detalle">
+                            </div>
+                            <div class="col-sm-4">
+                                <input class="form-control form-control-sm numericalValue" type="text" id="value" name="value" placeholder="Valor">	
+                            </div>
+                            <div class="col-sm-4">
+                                <?php $date = date("Y-m-d"); $maxDate = date("Y-m-d",strtotime($date ."+ 7 days")); ?>
+                                <input class="form-control form-control-sm" type="date" id="date" name="date" value="<?= date("Y-m-d")?>" max="<?= $maxDate?>">
+                            </div>
+                            <div class="col-sm-8">
+                                <div id="selectCategory"></div>	
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col groupEgress">
+                                <select class="form-control-sm form-control" id="type" name="type">
+                                    <option selected disabled value="">Seleccione el tipo</option>
+                                    <option value="Eventual">Eventual</option>
+                                    <option value="Variable">Variable</option>
+                                    <option value="Fijo">Fijo</option>
+                                </select>
+                            </div>
+                            <div id="typeFrequency" class="col">
+                                <select class="form-control-sm form-control" id="frequency" name="frequency">
+                                    <option selected disabled value="">Frecuencia</option>
+                                    <option value="1">Diario</option>
+                                    <option value="7">Semanal</option>
+                                    <option value="15">Quincenal</option>
+                                    <option value="30">Mensual</option>
+                                    <option value="60">BiMensual</option>
+                                    <option value="90">Trimestral</option>
+                                    <option value="180">Semestral</option>
+                                    <option value="365">Anual</option>
+                                </select>
+                            </div>
+                            <div class="col groupEgress">
+                                <select class="form-control-sm form-control" id="paymentMethod" name="paymentMethod">
+                                    <option selected disabled value="">Forma de pago</option>
+                                    <option value="Efectivo">Efectivo</option>
+                                    <option class="tCredit" value="Credito">Crédito</option>
+                                </select>	
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mt-2">
+                        <div class="row form-group">
+                            <div id="tCredit" class="col-9">
+                                <select class="form-control-sm form-control" id="targetCredit" name="targetCredit">
+                                    <option selected disabled value="">Seleccione la tarjeta</option>
+                                <?php foreach ($creditCard as $key => $value) {?>
+                                    <option value="<?= $value->name ?>"><?= $value->name ?></option>
+                                <?php } ?>
+                                    <option value="Otro">Otro</option>
+                                </select>	
+                            </div>
+                            <div id="tfees" class="col-3">
+                                <input class="form-control-sm form-control" type="number" min="1" max="48" id="fees" name="fees" placeholder="Cuotas">	
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 payments">
+                        <div class="row">
+                            <div class="col-8">
+                                <select class="form-control-sm form-control" id="detailPay" name="detailPay">
+                                    <option selected disabled value="">Seleccione el concepto</option>
+                                <?php foreach ($conceptOfPayment as $key => $value) {?>
+                                    <option value="<?= $value->name ?>"><?= $value->name ?></option>
+                                <?php } ?>
+                                </select>
+                            </div>
+                            <div class="col-4">
+                                <input class="form-control form-control-sm" type="text" id="valuePay" name="valuePay" placeholder="Valor">
+                            </div>
+                            <div class="col-sm-4">
+                                <?php $date = date("Y-m-d"); $maxDate = date("Y-m-d",strtotime($date ."+ 7 days")); ?>
+                                <input class="form-control form-control-sm" type="date" id="datePay" name="datePay" value="<?= date("Y-m-d")?>" max="<?= $maxDate?>">
+                            </div>
+                            <div class="col-sm-8">
+                                <div id="selectCategoryPay"></div>	
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-12 withdrawal">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <select class="form-control-sm form-control" id="detailWithdrawal" name="detailWithdrawal">
+                                    <option selected disabled value="">Concepto</option>
+                                    <option value="Ahorro">Ahorro</option>
+                                    <option value="Fondo">Fondo de emergencia</option>
+                                </select>	
+                            </div>
+                            <div class="col-sm-4">
+                                <input class="form-control form-control-sm" type="text" id="valueWithdrawal" name="valueWithdrawal" placeholder="Valor">
+                            </div>
+                            <div class="col-sm-4">
+                                <?php $date = date("Y-m-d"); $maxDate = date("Y-m-d",strtotime($date ."+ 7 days")); ?>
+                                <input class="form-control form-control-sm" type="date" id="dateWithdrawal" name="dateWithdrawal" value="<?= date("Y-m-d")?>" max="<?= $maxDate?>">
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>				
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal" id="btnCloseTransaction">Cerrar</button>
+          <button type="button" class="btn btn-warning btn-sm" id="btnAddTransaction">Añadir transacción</button>
+        </div>
+      </div>
+    </div>
+</div>
+<script src="<?= PATH; ?>general/public/js/budget.js"></script>

@@ -1,0 +1,495 @@
+/* structure */
+body {
+	background: #F4F6FA;
+}
+/* Footer */
+footer {
+	background:#333333;
+	color: #fff;
+	position: fixed;
+	z-index: 10;
+}
+.WatchTower-WatchTower-Logo:before {
+  color: #fff;
+}
+/* Dashboard */
+.dashLeft p {
+	font-size: 1.5rem;
+	font-weight: bold;
+	text-align: left;
+}
+.dashLeft span {
+	font-weight: 300;
+}
+.dashLeft small {
+	position: relative;
+	top:-29px;
+	color:#666666;
+	text-shadow: -1px #999999;
+}
+.dashRight {
+	position: relative;
+	text-align: right;
+	line-height: 2px;
+}
+.dashRight p {
+	padding-top: 10px;
+	font-weight: 400;
+	text-align: right;
+}
+.dashRight small {
+	color:#666666;
+	text-shadow: -1px #999999;
+}
+.card-body span {
+   cursor: pointer;
+   color: #CC0000;
+}
+.apps {
+	margin-top: 20px;
+}
+.apps h2 {
+	font-size: 1.1rem;
+}
+.popupApps {
+	text-align: center;
+}
+.cardDarshtop {
+	border-radius: 20px;
+	margin-right: 20px;
+	padding: 10px;
+}
+.cardDarsh {
+	background: #fff;
+	border-radius: 20px;
+	margin-right: 20px;
+	box-shadow: 0 4px 8px 0 #F4F6FA, 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+	padding: 10px;
+}
+.title{
+	width: 100%;
+}
+/** card social */
+.socialStatistics{
+  	flex-direction: row;
+  	justify-content: center;
+  	align-items: center;
+  	overflow: hidden;
+  	font-family: "Roboto", sans-serif;
+  	transition: 0.25s;
+}
+.socialStatistics .options {
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	overflow: hidden;
+	min-width: 100%;
+	width: 100%;
+	height: 350px;
+}
+@media screen and (max-width: 718px) {
+	.socialStatistics .options {
+	  min-width: 520px;
+	}
+	.socialStatistics .options .option:nth-child(5) {
+	  display: none;
+	}
+}
+@media screen and (max-width: 638px) {
+	.socialStatistics .options {
+	  min-width: 440px;
+	}
+	.socialStatistics .options .option:nth-child(4) {
+	  display: none;
+	}
+}
+@media screen and (max-width: 558px) {
+	.socialStatistics .options {
+	  min-width: 360px;
+	}
+	.socialStatistics .options .option:nth-child(3) {
+	  display: none;
+	}
+}
+@media screen and (max-width: 478px) {
+	.socialStatistics .options {
+	  min-width: 280px;
+	}
+	.socialStatistics .options .option:nth-child(2) {
+	  display: none;
+	}
+}
+.socialStatistics .options .option {
+	position: relative;
+	overflow: hidden;
+	min-width: 60px;
+	margin: 10px;
+	background: var(--optionBackground, var(--defaultBackground, #000000b2));
+	background-size: cover;
+	background-position: center;
+	cursor: pointer;
+	transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+.socialStatistics .options .option.active {
+	flex-grow: 10000;
+	transform: scale(1);
+	min-width: 850px;
+	max-width: 1200px;
+	margin: 0px;
+	border-radius: 40px;
+	background-size: cover;
+	background-position: center;
+}
+.socialStatistics .options .option.active .shadow {
+	box-shadow: inset 0 -120px 120px -120px black, inset 0 -120px 120px -100px black;
+}
+.socialStatistics .options .option.active .label {
+	bottom: 20px;
+	left: 20px;
+}
+.socialStatistics .options .option.active .label .info > div {
+	left: 0px;
+	opacity: 1;
+}
+.socialStatistics .options .option:not(.active) {
+	flex-grow: 1;
+	border-radius: 30px;
+}
+.socialStatistics .options .option:not(.active) .shadow {
+	bottom: -40px;
+	box-shadow: inset 0 -120px 0px -120px black, inset 0 -120px 0px -100px black;
+}
+.socialStatistics .options .option:not(.active) .label {
+	bottom: 10px;
+	left: 10px;
+}
+.socialStatistics .options .option:not(.active) .label .info > div {
+	left: 20px;
+	opacity: 0;
+}
+.socialStatistics .options .option .shadow {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	height: 120px;
+	transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+.socialStatistics .options .option .label {
+	display: flex;
+	position: absolute;
+	right: 0px;
+	height: 40px;
+	transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+.socialStatistics .options .option .label img {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	min-width: 40px;
+	max-width: 40px;
+	height: 40px;
+	border-radius: 100%;
+	background-color: white;
+}
+.socialStatistics .options .option .label .info {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-left: 10px;
+	color: white;
+	white-space: pre;
+}
+.socialStatistics .options .option .label .info > div {
+	position: relative;
+	transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95), opacity 0.5s ease-out;
+}
+.socialStatistics .options .option .label .info .main {
+	font-weight: bold;
+	font-size: 1.2rem;
+}
+.socialStatistics .options .option .label .info .main a{
+	color: white;
+}
+.socialStatistics .options .option .label .info .sub {
+	transition-delay: 0.1s;
+}
+.socialBtn {
+	display: block;
+	color: rgb(255, 255, 255);
+	text-decoration: none;
+	padding: 10px 10px;
+	border-radius: 5px;
+	position: relative;
+}
+.socialBtn:hover {
+	transition: all .2s ease-in-out;
+	background-color: hsl(221, 38%, 32%);
+	color: rgb(255, 255, 255);
+}
+.btn-social {
+	padding-left: 64px;
+	position: relative;
+	z-index: 1;
+}
+.btn-facebook {
+	background-color: hsl(221, 44%, 41%);
+}
+.btn-facebook .fa {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	width: 50px;
+	height: 100%;
+	text-align: center;
+	background: hsla(0, 0, 0, 0.1);
+	line-height: 3.2;
+	border-radius: 5px 0 0 5px;
+}
+#updatePagesFacebook > .fa-solid {
+	font-size: 12px;
+}
+/* Card */
+.wrapper {
+	font: 14px/20px 'roboto', sans-serif;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+.wrapper:focus {
+  outline: 0;
+}
+.clash-card {
+	cursor: pointer;
+  background: white;
+  width: 250px;
+  display: inline-block;
+  margin: auto;
+  border-radius: 19px;
+  position: relative;
+  text-align: center;
+  box-shadow: -1px 15px 30px -12px black;
+}
+.clash-card:hover {
+ 	opacity: 0.8;
+}
+.clash-card__image {
+  position: relative;
+  height: 190px;
+  margin-bottom: 12px;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+}
+.clash-card__image--wishes {
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/wizard-bg.jpg");
+}
+.clash-card__image--wishes img {
+  width: 295px;
+  position: absolute;
+  top: -36px;
+  left: -20px;
+}
+.clash-card__level {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+}
+.clash-card__level--wishes {
+  color: #CC0000;
+}
+.clash-card__unit-name {
+  font-size: 26px;
+  color: black;
+  font-weight: 900;
+}
+.clash-card__unit-description {
+  padding: 5px;
+}
+.clash-card__unit-stats--wishes {
+  background: #CC0000;
+}
+.clash-card__unit-stats--wishes .one-third {
+  border-right: 1px solid #9F0101;
+}
+.clash-card__unit-stats {
+  color: white;
+  font-weight: 700;
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
+}
+.clash-card__unit-stats .one-third {
+  width: 49%;
+  float: left;
+  padding: 10px 10px;
+}
+.clash-card__unit-stats .stat {
+  position: relative;
+  font-size: 16px;
+}
+.clash-card__unit-stats .stat-value {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 10px;
+}
+.clash-card__unit-stats .no-border {
+  border-right: none;
+}
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+/* End Card */
+.btn-danger {
+	background-color: #CC0000;
+}
+.btn-danger:hover{
+	background-color: #b02a37;
+}
+.btn {
+	padding: .25rem .5rem;
+	font-size: .875rem;
+	border-radius: .2rem;
+}
+/* To Do List */
+.toDoList {
+	background: #F4F6FA;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+.backgroundToDoList {
+	max-width: 90%;
+	width: 450px;
+	margin: 0 auto;
+}
+.profileToDoList h5 {
+	font-weight: 400;
+}
+.profileToDoList span {
+	letter-spacing: 1px;
+}
+.addTaskToDoList {
+	background-color: #fff;
+	border-radius: 15px;
+	height: 70px;
+	display: flex;
+	align-items: center;
+	padding: 10px;
+	gap: 70px;
+}
+.addTaskToDoList input{
+	width: 100%;
+	height: 100%;
+	border-radius: 8px;
+	border: none;
+	background-color: #fff;
+	margin-bottom: 0;
+	color: #636363;
+}
+.addTaskToDoList input::placeholder{
+	color: #706e6e;
+}
+.addTaskToDoList input:focus-visible {
+	border: 0;
+	outline: none;
+}
+.addTaskToDoList i {
+	font-size: 38px;
+	color: #CC0000;
+	cursor: pointer;
+}
+.addTaskToDoList i:hover {
+	transform: scale(1.1);
+}
+.sectionTaskToDoList h6 {
+	margin-bottom: 20px;
+}
+.sectionTaskToDoList li {
+	display: flex;
+	background: #ebebeb;
+	border-radius: 15px;
+	padding: 10px;
+	align-items: center;
+	justify-content: space-between;
+	margin: 5px 0;
+}
+.sectionTaskToDoList i {
+	color: #636363;
+	font-size: 20px;
+}
+.sectionTaskToDoList i:hover {
+	color: #CC0000;
+	cursor: pointer;
+}
+.sectionTaskToDoList > ul p {
+	font-size: 1.2rem;
+	margin-bottom: 0;
+}
+.line-through {
+	text-decoration: line-through;
+	color: #CC0000;
+}
+.cardItemWishes {
+	background: #fff;
+	border: solid #fff ;
+	border-radius: 10px;
+	box-shadow: 2px 2px 5px #999;
+}
+.budgetItemWishes, .priceItemWishes, .linkItemWishes{
+	position: relative;
+	bottom: -19px;
+	right: -7px;
+	padding: 5px;
+	text-align: center;
+	min-width: 100px;
+	max-height: 30px;
+	font-size: 14px;
+}
+.linkItemWishes {
+	text-align: left;
+}
+.linkItemWishes a {
+	font-size: 13px;
+}
+.linkItemWishes .fa-link {
+	font-size: 16px;
+}
+.linkItemWishes .fa-solid {
+	padding: 0;
+	margin-bottom: 14px;
+	height: 0;
+	width: 31px;
+}
+.budgetItemWishes {
+	background-color: #2c79e2;
+	color: #fff;
+}
+.priceItemWishes {
+	border-radius: 0 0 5px 0;
+	background-color: #52ee76;
+	color: #fff;
+}
+.buyWishes {
+	position: relative;
+	left: 99%;
+	top: -46px;
+	cursor: pointer;
+}
+.buyWishes:hover {
+	color: #CC0000;
+}
+.imgWishes {
+	max-height: 205px;
+}
+.imgWishes > img{
+	margin: auto;
+	width: 100%;
+	max-height: 205px;
+	object-fit: cover;
+}

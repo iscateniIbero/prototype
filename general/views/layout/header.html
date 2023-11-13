@@ -1,0 +1,83 @@
+<?php 
+    $style = "styleDashboard.css";
+    if (stristr($title, 'Zothd Gaming')) {
+        $style = "styleZothd.css";
+    } else if (stristr($title, 'Wallet')) {
+        $style = "styleWalllet.css";
+    } else if (stristr($title, 'Social Management')) {
+			$style = "styleSocial.css";
+		}
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+	<link  rel="icon" href="<?= PATH; ?>general/public/images/WatchTower-Favicon.png" type="image/png" />
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css"/>
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="<?= PATH; ?>general/public/libraries/lightbox/lightbox.min.css">
+  <link rel="stylesheet" href="<?= PATH; ?>general/public/libraries/editor/editor.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<link rel="stylesheet" href="<?= PATH; ?>general/public/css/style.css">
+  <link rel="stylesheet" href="<?= PATH; ?>general/public/css/<?= $style; ?>">
+	<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css">
+	<!--<script src="https://kit.fontawesome.com/a36d93a8c8.js" crossorigin="anonymous"></script>-->
+	<script src='<?= PATH; ?>general/public/libraries/lightbox/lightbox-plus-jquery.min.js'></script>
+	<script src='<?= PATH; ?>general/public/libraries/lightbox/lightbox.min.js'></script>
+	<script src='<?= PATH; ?>general/public/libraries/editor/editor.js'></script>
+	<title><?= $title; ?></title>
+</head>
+<body>
+	<header>
+		<div class="container">
+			<div class="right">
+				<div class="menu">
+					<ul>
+						<li><a href="https://www.facebook.com/IanScateni" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+						<li><a href="https://twitter.com/IanScateni" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+	          <li><a href="https://instagram.com/IanScateni" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+	          <li><a href="https://www.linkedin.com/in/ianscateni" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
+	          <li><a href="https://github.com/IanScateni" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="area"></div>
+	<div class="main-menu">
+		<ul>
+			<a href="<?= PATH;?>">
+				<div class="logo">
+					<img loading="lazy" src="<?= PATH; ?>general/public/images/WatchTower-Logo.png">
+				</div>
+			</a>
+			<div class="lineLogo"></div>
+			<div class="property"></div>
+				<li>
+					<a id="Tique" href="<?= PATH; ?>">
+						<i><img src="<?= PATH; ?>general/public/images/Wallet.png" alt="Wallet"></i>
+						<span class="nav-text">
+							Wallet
+						</span>
+					</a>    
+				</li>
+			</ul>
+			<ul class="logout">
+			<li>
+				<a id="logout" href="<?= PATH; ?>general/functions/helpers/logout.php">
+					<i class="fa-solid fa-person-from-portal"></i>
+					<span class="nav-text">
+						Cerrar sesión
+					</span>
+				</a>
+			</li>  
+	  	</ul>	
+	</div>

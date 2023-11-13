@@ -1,0 +1,24 @@
+<div class="error">
+	<span>Datos de ingreso no válidos.</span>	
+</div>
+<div class="userpass">
+	<span>Por favor ingrese su usuario y contraseña</span>
+</div>
+<div class="container login">
+	<div id="login-button">
+		<img loading="lazy" src="<?= PATH; ?>general/public/images/login-w-icon.png">
+	</div>
+	<div class="container-login">
+		<h1>Iniciar sesión</h1>
+		<span class="close-btn">
+			<img loading="lazy" src="<?= PATH; ?>general/public/images/circle-close.png">
+		</span>
+		<form action="" id="formLogin">
+			<input class="intext" type="text" name="user" id="user" placeholder="Usuario" minlength="5" required pattern="[A-Za-z0-9]{5,40}" title="Utiliza un formato que coincida con el solicitado: Letras y números. Tamaño mínimo: 5. Tamaño máximo: 40">	
+			<center><span class="infoUser">Por favor ingrese su usuario</span></center>
+			<input class="intext" type="password" name="password" id="password" placeholder="Contraseña" minlength="5" required>
+			<center><span class="infoPass">Por favor ingrese su contraseña</span></center>
+			<input id="btnLogin" class="btnLogin" type="button" value="Iniciar Sesión">
+		</form>
+	</div>
+</div>

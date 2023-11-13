@@ -1,0 +1,32 @@
+<div class="container-fluid">
+	<div class="wrap">
+		<div id="spinner"><i class="fa-solid fa-coins fa-beat-fade"></i></div>
+		<div id="content">
+			<div class="tab-content" id="v-pills-tabContent">
+				<div class="tab-pane fade show active" id="v-pills-budget" role="tabpanel" aria-labelledby="v-pills-budget-tab">
+				<?php $creditCard = creditCard();	
+				$conceptOfPayment	= conceptOfPayment();
+				include_once 'budget/budgetView.html';?>
+				</div>
+				<div class="tab-pane fade" id="v-pills-investment" role="tabpanel" aria-labelledby="v-pills-investment-tab">
+				<?php include_once 'investment/investmentView.html';?>
+				</div>
+			</div>
+			<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+				<a id="v-pills-budget-tab" data-bs-toggle="pill" data-bs-target="#v-pills-budget" type="button" role="tab" aria-controls="v-pills-budget">
+					<div class="boton activeTique">
+						<span>Presupueto</span>
+						<i class="fas fa-chart-pie"></i>
+					</div>						
+				</a>
+				<a id="v-pills-investment-tab" data-bs-toggle="pill" data-bs-target="#v-pills-investment" type="button" role="tab" aria-controls="v-pills-investment">
+					<div class="boton">
+						<span>Inversiones</span>
+						<i class="fas fa-hand-holding-usd"></i>
+					</div>	
+				</a>
+			</div>
+		</div>  
+	</div>
+</div>
+<script src="<?php echo PATH; ?>general/public/js/index.js"></script>

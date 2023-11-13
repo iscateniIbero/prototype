@@ -1,0 +1,110 @@
+<?php $investments = json_decode(investments());?>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-10">
+            <div class="row">
+                <div class="col-9 align-items-start">
+                    <div class="row">
+                        <div class="col">
+                            <span style="font-size:13px; font-family: inherit; font-weight: 500;">Total Invertido</span>
+                            <h4>$<?= number_format($investments->investments->totalInvested, 0, '.', '.'); ?></h4>
+                        </div>
+                        <div class="col">
+                            <span style="font-size:13px; font-family: inherit; font-weight: 500;">Total criptomonedas</span>
+                            <h4>$<?= number_format($investments->investments->totalCrypto, 0, '.', '.'); ?></h4>
+                        </div>
+                        <div class="col">
+                            <span style="font-size:13px; font-family: inherit; font-weight: 500;">Total acciones</span>
+                            <h4>$<?= number_format($investments->investments->totalStock, 0, '.', '.'); ?></h4>
+                        </div>
+                        <div class="col">
+                            <span style="font-size:13px; font-family: inherit; font-weight: 500;">Total Fondos</span>
+                            <h4>$<?= number_format($investments->investments->totalFund, 0, '.', '.'); ?></h4>
+                        </div>
+                        <div class="col">
+                            <span style="font-size:13px; font-family: inherit; font-weight: 500;">Balance actual</span>
+                            <h4>$<?= number_format($investments->investments->totalBalance, 0, '.', '.'); ?></h4>
+                        </div>
+                        <div class="col">
+                            <span style="font-size:13px; font-family: inherit; font-weight: 500;">Balance criptomonedas</span>
+                            <h4>$<?= number_format($investments->investments->totalBalanceCrypto, 0, '.', '.'); ?></h4>
+                        </div>
+                        <div class="col">
+                            <span style="font-size:13px; font-family: inherit; font-weight: 500;">Balance acciones</span>
+                            <h4>$<?= number_format($investments->investments->totalBalanceStock, 0, '.', '.'); ?></h4>
+                        </div>
+                        <div class="col">
+                            <span style="font-size:13px; font-family: inherit; font-weight: 500;">Balance fondos</span>
+                            <h4>$<?= number_format($investments->investments->totalBalanceFund, 0, '.', '.'); ?></h4>
+                        </div>
+                    </div>        
+                </div>
+                <div class="col-3 align-items-end">
+                    <ul class="btn-group nav nav-pills mb-3 justify-content-end menuInvestment" id="pills-tab" role="group">
+                        <li>
+                            <button class="btn btn-warning left-btn btn-sm active" id="pills-portfolio-tab" data-bs-toggle="pill" data-bs-target="#pills-portfolio" type="button" role="tab" aria-controls="pills-portfolio" aria-selected="true">Portafolio</button>
+                        </li>
+                        <li>
+                            <button class="btn btn-warning center-btn btn-sm" id="pills-cryptocurrencies-tab" data-bs-toggle="pill" data-bs-target="#pills-cryptocurrencies" type="button" role="tab" aria-controls="pills-cryptocurrencies" aria-selected="false">Criptomonedas</button>
+                        </li>
+                        <li>
+                            <button class="btn btn-warning center-btn btn-sm" id="pills-stocks-tab" data-bs-toggle="pill" data-bs-target="#pills-stocks" type="button" role="tab" aria-controls="pills-stocks" aria-selected="false">Acciones</button>
+                        </li>
+                        <li>
+                            <button class="btn btn-warning right-btn btn-sm" id="pills-funding-tab" data-bs-toggle="pill" data-bs-target="#pills-funding" type="button" role="tab" aria-controls="pills-funding" aria-selected="false">Fondos</button>
+                        </li>
+                    </ul>        
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="col-10">
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="pills-portfolio" role="tabpanel" aria-labelledby="pills-portfolio-tab" tabindex="0">
+                            <?php include_once 'portfolioView.html'; ?>
+                        </div>
+                        <div class="tab-pane fade" id="pills-cryptocurrencies" role="tabpanel" aria-labelledby="pills-cryptocurrencies-tab" tabindex="0">
+                            <?php include_once 'cryptocurrencies/cryptocurrenciesView.html'; ?>
+                        </div>
+                        <div class="tab-pane fade" id="pills-stocks" role="tabpanel" aria-labelledby="pills-stocks-tab" tabindex="0">
+                            <?php include_once 'stocks/stocksView.html'; ?>
+                        </div>
+                        <div class="tab-pane fade" id="pills-funding" role="tabpanel" aria-labelledby="pills-funding-tab" tabindex="0">Fondos</div>
+                      </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-2 cardBudgetList p-2">
+            <h5 class="text-center">Ultimas transacciones</h5>
+            <?php $transactions = json_decode(getTransactionHistoryInvestment('8'));?>
+            <div class="container">
+                <?php foreach ($transactions as $transaction) {?>
+                    <div class="row transaction justify-content-md-center">
+                        <div class="col-4">
+                            <img class="imgTransaction img-fluid" src="<?= PATH ?>general/public/images/<?= $transaction->platform; ?>.webp">
+                        </div>
+                        <div class="col-6">
+                            <div class="text">
+                                <?php $concept = $transaction->concept; if( $transaction->concept == "Cryptomonedas") { $concept = "Criptomonedas"; }?>
+                                <div class="type"><?= $concept; ?></div>
+                                <?php $type = "Compra"; if( $transaction->type != "Buy") { $type = "Venta"; }?>
+                                <small><?= $type; ?></small>
+                                <div class="date"><?= $transaction->date; ?></div>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="mt-4"></div>
+                                <?php 
+                                 if( $transaction->type != "Buy") {
+                                   $value = "<div class='value negative'>-$".number_format($transaction->value, 0, ',', '.')."</div>";         
+                                 } else {
+                                    $value = "<div class='value positive'>+$".number_format($transaction->value, 0, ',', '.')."</div>"; 
+                                 }
+                                 echo $value;
+                                ?>
+                        </div>
+                      </div><hr>
+                <?php } ?> 
+            </div>
+        </div>
+    </div>
+</div>

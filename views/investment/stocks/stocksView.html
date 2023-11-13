@@ -1,0 +1,25 @@
+<div class="row d-flex align-items-start" style="min-width: 120.7%;">
+  <div class="col-sm" style="max-width: 150px; border-right: solid 2px #17171A; border-radius: 5px;">
+    <div class="divSelectorPage nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+      <a id="v-pills-trii-tab" class="active" data-bs-toggle="pill" data-bs-target="#v-pills-trii" role="tab" aria-controls="v-pills-trii" aria-selected="true">
+        <div class="menuSelectorPage">
+          <div class="row">
+            <div class="col-4"> 
+              <img class="imageMenuSelectorPage" src="<?= PATH ?>general/public/images/Trii.webp">
+            </div>
+            <div class="col-8">
+              Trii
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="col-sm-10" style="width: 93%;">
+    <div class="tab-content" id="v-pills-tabContent">
+      <div class="tab-pane fade show active" id="v-pills-trii" role="tabpanel" aria-labelledby="v-pills-trii-tab" tabindex="0">
+        <?php include_once 'trii/triiView.html';?>
+      </div>
+    </div>
+  </div>
+</div>

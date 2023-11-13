@@ -1,0 +1,40 @@
+<div class="row d-flex align-items-start" style="min-width: 120.7%;">
+  <div class="col-sm" style="max-width: 150px; border-right: solid 2px #17171A; border-radius: 5px;">
+    <div class="divSelectorPage nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+      <a id="v-pills-binance-tab" class="active" data-bs-toggle="pill" data-bs-target="#v-pills-binance" role="tab" aria-controls="v-pills-binance" aria-selected="true">
+        <div class="menuSelectorPage">
+          <div class="row">
+            <div class="col-4"> 
+              <img class="imageMenuSelectorPage" src="<?= PATH ?>general/public/images/Binance.webp">
+            </div>
+            <div class="col-8">
+              Binance
+            </div>
+          </div>
+        </div>
+      </a>
+      <a id="v-pills-blockfi-tab" data-bs-toggle="pill" data-bs-target="#v-pills-blockfi" role="tab" aria-controls="v-pills-blockfi" aria-selected="false">
+        <div class="menuSelectorPage">
+          <div class="row">
+            <div class="col-4"> 
+              <img class="imageMenuSelectorPage" src="<?= PATH ?>general/public/images/Blockfi.webp">
+            </div>
+            <div class="col-8">
+              Blockfi
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="col-sm-10" style="width: 93%;">
+    <div class="tab-content" id="v-pills-tabContent">
+      <div class="tab-pane fade show active" id="v-pills-binance" role="tabpanel" aria-labelledby="v-pills-binance-tab" tabindex="0">
+        <?php include_once 'binance/binanceView.html';?>
+      </div>
+      <div class="tab-pane fade" id="v-pills-blockfi" role="tabpanel" aria-labelledby="v-pills-blockfi-tab" tabindex="0">
+        <?php include_once 'blockfi/blockfiView.html';?>
+      </div>
+    </div>
+  </div>
+</div>

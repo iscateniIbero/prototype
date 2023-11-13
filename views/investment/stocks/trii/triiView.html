@@ -1,0 +1,42 @@
+<div class="mt-2">
+  <h6>Tus activos</h6>
+  <div class="container-fluid">
+    <div id="cardStocksAssets"></div> 
+  </div>
+</div>
+<div class="modal fade" id="detailAssetStock" tabindex="-1" aria-labelledby="assetStockModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content modalBubget">
+      <div class="modal-header">
+        <h5 class="modal-title" id="assetStockModalLabel"></h5>
+      </div>
+      <div class="modal-body">
+          <div class="row">
+            <div class="col-6">
+              <div class="col-12 text-start">
+                <div class="quantityAssetStock"></div>
+              </div>
+              <div class="col-12 text-start">
+                <div class="valueTotalAssetStock"></div>
+              </div>
+              <div class="col-12 text-start">
+                <div class="balanceAssetStock"></div>
+              </div>
+            </div>
+            <div class="col-6 text-end">
+              <div class="imgAssetStock"></div>
+            </div>
+          </div>
+          <hr>
+          <div class="table-responsive-sm">
+            <table id="tableAssetStocks" class="table text-end tableAssetStocks" style="width: 100%;">
+            </table>  
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="<?php echo PATH; ?>general/public/js/trii.js"></script>

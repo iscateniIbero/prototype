@@ -1,0 +1,27 @@
+Options All -Indexes
+Options -MultiViews
+
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
+Header always set Content-Security-Policy "upgrade-insecure-requests;"
+
+#Rutas Principales
+RewriteRule ^zothdgaming/games$ zothdgaming/games.php [L]
+RewriteRule ^zothdgaming/games/$ zothdgaming/games.php [L]
+RewriteRule ^zothdgaming/game$ zothdgaming/game.php [L]
+RewriteRule ^zothdgaming/game/$ zothdgaming/game.php [L]
+RewriteRule ^404/$ 404.php [L]
+RewriteRule ^404$ 404.php [L]
+RewriteRule ^zothdgaming/404/$ zothdgaming/404.php [L]
+RewriteRule ^zothdgaming/404$ zothdgaming/404.php [L]
+RewriteRule ^zothdgaming/news$ zothdgaming/news.php [L]
+RewriteRule ^zothdgaming/news/$ zothdgaming/news.php [L]
+RewriteRule ^zothdgaming/releases/$ zothdgaming/releases.php [L]
+RewriteRule ^zothdgaming/releases$ zothdgaming/releases.php [L]
+
+#Rutas Detalles Juego
+RewriteRule ^zothdgaming/game/([a-zA-Z0-9/.:'-]+)$ zothdgaming/game.php?game=$1 [L]
+
+#Error 404
+ErrorDocument 404 https://watchtower.test/404
