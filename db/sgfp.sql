@@ -43731,7 +43731,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `lastName`, `user`, `image`, `email`, `password`, `validation`, `rol`, `ip`, `location`, `geolocation`, `userAgent`, `tokenUser`, `tokenUserExpire`, `dateUpdate`, `dateRegister`) VALUES
-(1, 'Ian', 'Scateni', 'pruebas', 'default.png', 'ianscateni@hotmail.com', '3627909a29c31381a071ec27f7c9ca97726182aed29a7ddd2e54353322cfb30abb9e3a6df2ac2c20fe23436311d678564d0c8d305930575f60e2d3d048184d79', 0, 1, '{\"zothdgaming\": 0,\"socialmanagement\": 0,\"wallet\": 0,\"herz\": 0}', ',,,,,,,,,127.0.0.1', '0', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2OTg1MTcyNzMsImV4cCI6MTY5ODU2MDQ3MywiZGF0YSI6eyJpZCI6MSwidXNlciI6InVsdHJhbWFzdGVyIiwiZW1haWwiOiJpYW5zY2F0ZW5pQGhvdG1haWwuY29tIn19.mSPtGJJWRzlHWCHZ4yu2s9VrVuzQ9aZIlXUsdpPW52Y', '1698560473', '2023-11-12 22:10:39', '2022-10-06 20:44:23');
+(1, 'Ian', 'Scateni', 'prueba', 'default.png', 'ianscateni@hotmail.com', '3627909a29c31381a071ec27f7c9ca97726182aed29a7ddd2e54353322cfb30abb9e3a6df2ac2c20fe23436311d678564d0c8d305930575f60e2d3d048184d79', 0, 1, '{\"zothdgaming\": 0,\"socialmanagement\": 0,\"wallet\": 0,\"herz\": 0}', ',,,,,,,,,127.0.0.1', '0', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2OTg1MTcyNzMsImV4cCI6MTY5ODU2MDQ3MywiZGF0YSI6eyJpZCI6MSwidXNlciI6InVsdHJhbWFzdGVyIiwiZW1haWwiOiJpYW5zY2F0ZW5pQGhvdG1haWwuY29tIn19.mSPtGJJWRzlHWCHZ4yu2s9VrVuzQ9aZIlXUsdpPW52Y', '1698560473', '2023-11-12 22:10:39', '2022-10-06 20:44:23');
 
 -- --------------------------------------------------------
 
