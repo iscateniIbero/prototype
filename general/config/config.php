@@ -2,7 +2,7 @@
 define("PATH", "https://" . $_SERVER['HTTP_HOST'] . "/");
 define("HOST", "localhost");
 define("USER", "root");
-define("PASSWORD", "");
+define("PASSWORD", "881127gecjrNtr");
 define("DB", "sgfp");
 
 function limpiarDatos($datos){
